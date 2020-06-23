@@ -1,0 +1,57 @@
+<html>
+
+
+<title>HTML Table</title>
+<h1> STUDENT PORTAL</h1>
+
+
+<body>
+
+<form action="Ssem.html">
+
+<h3>Enter your USN</h3>
+
+<input type="text" name="usn"  maxlength="10" title="enter your USN" placeholder="enter your USN" required/>
+
+
+
+<h3>SELECT A SEMESTER</h3>
+
+<input type="radio" name="SEM" value="1">1<br>
+<input type="radio" name="SEM" value="2">2<br>
+<input type="radio" name="SEM" value="3">3<br>
+<input type="radio" name="SEM" value="4">4<br>
+<input type="radio" name="SEM" value="5">5<br>
+<input type="radio" name="SEM" value="6">6<br>
+<input type="radio" name="SEM" value="7">7<br>
+<input type="radio" name="SEM" value="8">8<br>
+
+<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+ 
+<%
+      public static String driver = "com.mysql.jdbc.Driver";
+	public static String url = "jdbc:mysql://localhost:3306/globalise";
+	public static String uname = "root";
+	public static String pwd = "root";
+      public static Connection getDatabaseConnection(String driver, String url, String uname, String pwd)throws ClassNotFoundException, SQLException {
+		Connection con;
+		Class.forName(driver);
+		System.out.println("Driver Loaded Successfully");
+		con = DriverManager.getConnection(url,uname,pwd);  
+		System.out.println("Connection Established successfully");
+		return con;
+		
+	}
+      
+ 
+
+<input  type="submit" value="Submit"/>
+
+</form>
+
+</body>
+
+</html>
